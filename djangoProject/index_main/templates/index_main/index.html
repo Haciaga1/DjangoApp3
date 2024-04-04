@@ -1,0 +1,28 @@
+{% extends 'index_main/wrapper.html'%}
+{% block title%} {{ titul }} {% endblock %}
+{% block content %}
+<div class="features">
+    <h1> Haqqimizda</h1>
+    <p>Haqqimizda sehifemize xosh gelmiziniz. Biz tələbələrik və informasiyanı idarə edən
+        sistemlər hazırlayırıq.
+        Dizayn işlərindən də əsas biznes məntiqi qururuq.</p>
+    <!-- {{a}} -->
+
+    {% for val in siyahi %}
+    {% if val != "Salam" %}
+    <p>{{ val }}</p>
+    {% endif %}
+    {% endfor %}
+    {% for key, value in luget.items %}
+    {{ value }}
+    {% endfor %}
+
+    {% for el in t %}
+    <div class="alert alert-warning">
+        <h3>{{ el.title }}</h3>
+        <p>{{ el.anons }}</p>
+        <h5>{{ el.date }}</h5>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

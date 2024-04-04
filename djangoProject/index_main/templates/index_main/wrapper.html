@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="az">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %} </title>
+        <link rel="stylesheet" href="{% static 'index_main/css/main.css' %}" >
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    </head>
+    <body>
+        <aside>
+        <img src="{% static 'MainApp/img/map_of_Azerbaijan.png' %}" alt = "logoaz"
+        width="200px">
+        <span class="logos">Xəritələrdə texniki görmə</span>
+        <h1>Naviqasiya</h1>
+        <ul>
+            <a href="{% url 'index' %}"><li><i class="fas fa-home"></i> Əsas səhifə</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i> Haqımızda</li></a>
+            <a href="{% url 'create' %}"><li><i class="fas fa-paper-plane"></i> Əlaqə</li></a>
+        </ul>
+        
+
+        </aside>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+       
+        
+        </body>
+</html>
